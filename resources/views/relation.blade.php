@@ -117,5 +117,9 @@
 @endif
 
 @endsection
+@section('finish')
+@endsection
+
 @section('footer')
+@parent
 @endsection
