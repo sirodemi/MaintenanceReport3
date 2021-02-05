@@ -18,21 +18,22 @@
             color: #ccc;
         }
         @media print{
-             .NoPrint{ display: none;}
+                .NoPrint{ display: none;}
         }
     </style>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <script src="/js/app.js"></script>
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="/css/app.css" rel="stylesheet">
-
 </head>
+
 <body>
     <div class="header">
         @section('header')
-        <a href="{{ url('/') }}" class="NoPrint">メニュー画面</a>
-        <br>
-        <a href="{{ url('/syoken') }}" class="NoPrint">所見選択画面（リセット）</a>
+        <nav class="nav">
+            <a class="nav-link NoPrint" href="{{ url('/') }}">メニュー画面</a>
+            <a class="nav-link" href="{{ url('/syoken') }}">所見選択画面（リセット）</a>
+        </nav>
         @show
     </div>
     <div class="content">

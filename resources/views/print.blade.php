@@ -32,7 +32,6 @@
     <button type="button" id="save-button" class="NoPrint">保存</button>
 </form>
 
-
 <br><br>
 
 書式1
