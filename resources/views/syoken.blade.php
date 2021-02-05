@@ -841,7 +841,12 @@ console.log('563:candy ',candy)
 
     </script>
 </body>
+@endsection
 
+@section('finish')
 @endsection
+
 @section('footer')
+@parent
 @endsection
+

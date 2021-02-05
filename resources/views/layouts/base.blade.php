@@ -10,24 +10,20 @@
 
     <title>@yield('title')</title>
     <style>
-        /* .footer{
+        .footer{
             text-align: right;
             font-size: 10pt;
             margin: 10px;
-            border-bottom: solid 1px #ccc;
+            /* border-bottom: solid 1px #ccc; */
             color: #ccc;
-        } */
+        }
         @media print{
-                .NoPrint{ display: none;}
+            .NoPrint{ display: none;}
         }
 
-        body:after{
-            position: absolute; /* 位置の相対指定 */
-            right: 0; /* 右から０ピクセルの位置指定 */
-            bottom: 0; /* 下から０ピクセルの位置指定 */
-            color: #ccc;
-            content: "copyright 2021 sunyou.co.jp";
-        }
+.finish{
+            border-bottom: solid 1px #ccc;
+}
     </style>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <script src="/js/app.js"></script>
@@ -58,10 +54,23 @@
         @show
     </div>
     <div class="content">
-        @yield('content')
+        @section('content')
+            @yield('content')
+        @show
+    </div>
+    <div class="finish">
+        @section('finish')
+        @yield('finish')
+        @show
     </div>
     <div class="footer">
-        @yield('footer')
+        @section('footer')
+            @yield('footer')
+            copyright 2021 sunyou.co.jp
+        @show
     </div>
+
+
+
 </body>
 </html>

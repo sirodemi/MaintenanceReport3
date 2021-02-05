@@ -27,12 +27,14 @@
         margin:50px;
     }
 
-    /* body:after{ */
-        /* position: absolute; 位置の相対指定 */
-        /* right: 0; 右から０ピクセルの位置指定 */
-        /* bottom: 0; 下から０ピクセルの位置指定 */
-        /* content:"ページ"; ページ番号を擬似要素に表示 */
-    /* } */
+    body:after{
+        position: absolute; /* 位置の相対指定 */
+        right: 0; /* 右から０ピクセルの位置指定 */
+        bottom: 0; /* 下から０ピクセルの位置指定 */
+        color: #ccc;
+        content: "copyright 2021 sunyou.co.jp";
+    }
+
 </style>
 @endsection
 
