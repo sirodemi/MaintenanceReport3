@@ -98,8 +98,8 @@
     <div class="card mx-auto">
         <div class="card-body">
             <div class="card-header" id="{{$partID}}">[不良箇所]{{$part[$i]}}   </div>
-            <p class="card-text" id="{{$commentID}}"> {{$comment[$i]}} </p>
-            <p class="card-text" id="{{$actionID}}"> {{$action[$i]}} </p>
+            <p class="card-text" id="{{$commentID}}">症状： {{$comment[$i]}} </p>
+            <p class="card-text" id="{{$actionID}}">▶︎ {{$action[$i]}} </p>
         </div>
     </div>
 @endfor
