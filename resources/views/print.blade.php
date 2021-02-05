@@ -1,7 +1,6 @@
 @extends('layouts.base')
 @section('title','印刷画面')
 @section('header')
-@parent
 <style>
     /* 印刷プレビュー＆印刷用レイアウト */
     @media print,
@@ -30,7 +29,7 @@
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
-    <button type="button" id="save-button">保存</button>
+    <button type="button" id="save-button" class="NoPrint">保存</button>
 </form>
 
 
@@ -173,7 +172,6 @@ console.log('169: ',jsonArray)
 
 @endsection
 @section('footer')
-    copyright 2021 Semantic-i
 @endsection
 
 

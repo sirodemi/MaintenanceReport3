@@ -12,7 +12,6 @@
 @endsection
 
 @section('footer')
-    copyright 2021 Semantic-i
 @endsection
 
 

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
     <style>
@@ -28,14 +30,16 @@
 <body>
     <div class="header">
         @section('header')
-            <a href="{{ url('/') }}" class="NoPrint">メニュー画面</a>
-            <br>
-            <a href="{{ url('/syoken') }}" class="NoPrint">所見選択画面（リセット）</a>
+        <a href="{{ url('/') }}" class="NoPrint">メニュー画面</a>
+        <br>
+        <a href="{{ url('/syoken') }}" class="NoPrint">所見選択画面（リセット）</a>
+        @show
     </div>
     <div class="content">
         @yield('content')
     </div>
     <div class="footer">
+        copyright 2021 sunyou.co.jp
         @yield('footer')
     </div>
 </body>

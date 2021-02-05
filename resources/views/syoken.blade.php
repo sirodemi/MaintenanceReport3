@@ -1,5 +1,6 @@
 @extends('layouts.base')
 @section('title','所見')
+
 @section('header')
     @parent
 @endsection
@@ -843,5 +844,4 @@ console.log('563:candy ',candy)
 
 @endsection
 @section('footer')
-    copyright 2021 Semantic-i
 @endsection

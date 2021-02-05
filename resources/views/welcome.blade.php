@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.base')
+@section('title','メニュー画面')
+@section('header')
+@endsection
+@section('content')
 
-        <title>所見管理</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -21,7 +17,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: 80vh;
             }
 
             .flex-center {
@@ -63,9 +59,6 @@
             }
         </style>
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     </head>
 
     <body>
@@ -87,4 +80,9 @@
             </div>
         </div>
     </body>
-</html>
+
+
+
+@endsection
+@section('footer')
+@endsection
