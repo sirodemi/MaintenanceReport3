@@ -21,17 +21,18 @@
 
 @section('content')
 
-{{-- 印刷ボタン --}}
-<button type="button" class="NoPrint" id="print-button">印刷</button>
-
-
 <!-- 保存ボタン -->
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
+{{-- 印刷ボタン --}}
+<button type="button" class="NoPrint" id="print-button">印刷</button>
+
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
     <button type="button" id="save-button" class="NoPrint">保存</button>
 </form>
 
+<br><br>
+<p><h3>点検報告書</h3></p>
 <br><br>
 
 書式1

@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-
-<a onclick="history.back()" class="NoPrint"> <-- 前画面に戻る</a>
 <br><br>
 保存しました。
 @endsection

@@ -31,8 +31,9 @@
     <div class="header">
         @section('header')
         <nav class="nav">
-            <a class="nav-link NoPrint" href="{{ url('/') }}">メニュー画面</a>
+            <a class="nav-link" href="{{ url('/') }}">メニュー画面</a>
             <a class="nav-link" href="{{ url('/syoken') }}">所見選択画面（リセット）</a>
+            <a class="nav-link" onclick="history.back()">前画面に戻る</a>
         </nav>
         @show
     </div>
@@ -40,6 +41,7 @@
         @yield('content')
     </div>
     <div class="footer">
+        <br><br>
         copyright 2021 sunyou.co.jp
         @yield('footer')
     </div>
