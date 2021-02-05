@@ -10,15 +10,23 @@
 
     <title>@yield('title')</title>
     <style>
-        .footer{
+        /* .footer{
             text-align: right;
             font-size: 10pt;
             margin: 10px;
             border-bottom: solid 1px #ccc;
             color: #ccc;
-        }
+        } */
         @media print{
                 .NoPrint{ display: none;}
+        }
+
+        body:after{
+            position: absolute; /* 位置の相対指定 */
+            right: 0; /* 右から０ピクセルの位置指定 */
+            bottom: 0; /* 下から０ピクセルの位置指定 */
+            color: #ccc;
+            content: "copyright 2021 sunyou.co.jp";
         }
     </style>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
@@ -41,8 +49,6 @@
         @yield('content')
     </div>
     <div class="footer">
-        <br><br>
-        copyright 2021 sunyou.co.jp
         @yield('footer')
     </div>
 </body>

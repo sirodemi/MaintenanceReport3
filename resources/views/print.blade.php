@@ -2,6 +2,7 @@
 @section('title','印刷画面')
 @section('header')
 <style>
+
     /* 印刷プレビュー＆印刷用レイアウト */
     @media print,
     screen {
@@ -12,15 +13,31 @@
         }
     }
 
-    .card{
-        max-width: 80%;
-        /* text-align: center; */
+    .card-header{
+        font-size: 26px;
     }
+
+    .card{
+        /* max-width: 90%; */
+        /* text-align: center; */
+        font-size: 20px;
+    }
+
+    body{
+        margin:50px;
+    }
+
+    /* body:after{ */
+        /* position: absolute; 位置の相対指定 */
+        /* right: 0; 右から０ピクセルの位置指定 */
+        /* bottom: 0; 下から０ピクセルの位置指定 */
+        /* content:"ページ"; ページ番号を擬似要素に表示 */
+    /* } */
 </style>
 @endsection
 
 @section('content')
-
+<body>
 <!-- 保存ボタン -->
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
@@ -136,7 +153,6 @@
 
         // PHPの変数（所見の数）をjavascriptで取込む
         var syoken_cnt = <?php echo $syoken_cnt ?>;
-console.log('143:',syoken_cnt);
 
         // 不良箇所、所見、処置のリスト取得
         var array_part = [];
@@ -148,11 +164,6 @@ console.log('143:',syoken_cnt);
             array_action.push($('#action'+i).text().trim());
         }
 
-
-console.log('160: ',array_part);
-console.log('161: ',array_comment);
-console.log('162: ',array_action);
-
         var array = [];
         for(var i=0; i<array_part.length; i++){
             array.push({"part":array_part[i],"comment":array_comment[i],"action":array_action[i]});
@@ -161,15 +172,14 @@ console.log('162: ',array_action);
         var jsonArray=JSON.stringify(array);
         $('#saveData').val(jsonArray);
 
-console.log('169: ',jsonArray)
 
-            // 送信ボタンクリック
+        // 送信ボタンクリック
         $('.saveForm').submit();
     });
 
 </script>
 
-
+</body>
 @endsection
 @section('footer')
 @endsection
