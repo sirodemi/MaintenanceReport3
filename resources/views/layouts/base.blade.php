@@ -38,11 +38,23 @@
 <body>
     <div class="header">
         @section('header')
-        <nav class="nav">
-            <a class="nav-link" href="{{ url('/') }}">メニュー画面</a>
-            <a class="nav-link" href="{{ url('/syoken') }}">所見選択画面（リセット）</a>
-            <a class="nav-link" onclick="history.back()">前画面に戻る</a>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">所見管理</a>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/syoken') }}">所見選択画面（リセット）</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="history.back()">　　前に戻る</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
+
         @show
     </div>
     <div class="content">
