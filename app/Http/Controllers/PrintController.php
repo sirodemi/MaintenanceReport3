@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\GenFieldField;
 use Illuminate\Http\Request;
 use App\Report;
+
 
 class PrintController extends Controller
 {
     public function index(Request $request)
     {
 
+        // 所見データ
         $array = $request->all();
         $items = json_decode($array["syoken"], true);
         $part = array();
@@ -23,10 +26,18 @@ class PrintController extends Controller
             array_push($action, $item["action"]);
         }
 
+
+
+        // 現場情報読込
+        $genfield = GenFieldField::first();
+        // dd($genfield['field_name']);
+
+
         return view('print', [
             'part' => $part,
             'comment' => $comment,
             'action' => $action,
+            'genfield' => $genfield,
         ]);
     }
 

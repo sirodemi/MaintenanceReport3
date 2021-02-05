@@ -1,5 +1,11 @@
 <?php
 
+// メニュー画面
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 // 所見を選んで印刷、保存
 Route::get('syoken', 'SyokenController@index'); //読込
 Route::post('syoken_save', 'SyokenController@syoken_save'); //保存
@@ -45,20 +51,14 @@ Route::post('/action_edit/{action}', 'ActionController@edit'); //編集
 Route::post('/action/update', 'ActionController@update'); //更新
 
 
-// 印刷
+// 現場情報と印刷情報
+Route::post('print', 'PrintController@index')->name('print'); //現場情報と印刷情報を読込む
+Route::post('print_save', 'PrintController@save')->name('print_save'); //印刷情報編集
 
-Route::post('print', 'PrintController@index')->name('print'); //読込
 
-// Route::post('/print/{sunyou}', 'PrintController@index'); //読込
 
-// Route::post('print', 'PrintController@save'); //登録
-// Route::delete('/print/{print}', 'PrintController@delete'); //削除
-Route::post('print_save', 'PrintController@save')->name('print_save'); //編集
-// Route::post('/print/update', 'PrintController@update'); //更新
+
 
 // ここから下は不使用
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', function () {
-    return view('welcome');
-});

@@ -76,5 +76,9 @@ html, body {
 </body>
 @endsection
 
+@section('finish')
+@endsection
+
 @section('footer')
+@parent
 @endsection

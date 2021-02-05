@@ -54,14 +54,16 @@
 <p><h3>点検報告書</h3></p>
 <br><br>
 
+
+
 書式1
 <table class="table table-bordered">
     <tbody>
         <tr>
-            <th>工事名</th><td colspan="3" id="koujiMei">kojiMei data</td>
+            <th>工事名</th><td colspan="3" id="koujiMei">{{$genfield->field_name}}</td>
         </tr>
         <tr>
-            <th>住所</th><td colspan="3" id="jusyo">jusyo data</td>
+            <th>住所</th><td colspan="3" id="jusyo">{{$genfield->field_address}}</td>
         </tr>
         <tr>
             <th>型式</th><td id="katasiki">katasiki data</td>
@@ -108,22 +110,22 @@
 
 <script type="module">
 
-    // データベースからダウンロード
-    var koujiData = '工事データ';
-    var jusyoData = '住所データ';
-    var katasikiData ='型式データ';
-    var seizoBangoData = '製造番号データ';
-    var seizoNengetuData = '製造年月データ';
-    var settiBasyoData = '設置場所データ';
+    // // データベースからダウンロード
+    // var koujiData = '工事データ';
+    // var jusyoData = '住所データ';
+    // var katasikiData ='型式データ';
+    // var seizoBangoData = '製造番号データ';
+    // var seizoNengetuData = '製造年月データ';
+    // var settiBasyoData = '設置場所データ';
 
-    // 概要へ代入する
-    $('#koujiMei').html(koujiData);
-    $('#jusyo').html(jusyoData);
-    $('#katasiki').html(katasikiData);
-    $('#katasiki2').html(katasikiData);
-    $('#seizoBango').html(seizoBangoData);
-    $('#seizoNengetu').html(seizoNengetuData);
-    $('#settiBasyo').html(settiBasyoData);
+    // // 概要へ代入する
+    // $('#koujiMei').html(koujiData);
+    // $('#jusyo').html(jusyoData);
+    // $('#katasiki').html(katasikiData);
+    // $('#katasiki2').html(katasikiData);
+    // $('#seizoBango').html(seizoBangoData);
+    // $('#seizoNengetu').html(seizoNengetuData);
+    // $('#settiBasyo').html(settiBasyoData);
 
 
     // 画面遷移せずに編集する(inline edit)
