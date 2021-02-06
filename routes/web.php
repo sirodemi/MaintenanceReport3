@@ -58,7 +58,6 @@ Route::post('print_save', 'PrintController@save')->name('print_save'); //印刷�
 
 
 
-
 // ここから下は不使用
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -41,14 +41,19 @@
 
 @section('top')
 {{-- <div>印刷</div> --}}
-<!-- 保存ボタン -->
+
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
-{{-- 印刷ボタン --}}
-<button type="button" class="NoPrint" id="print-button">印刷</button>
+    {{-- 印刷ボタン --}}
+    <button type="button" class="NoPrint" id="print-button">印刷</button>
 
+    <!-- 保存ボタン -->
+    <button type="button" class="NoPrint" id="save-button">保存</button>
+
+    {{-- 保存データ --}}
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
-    <button type="button" id="save-button" class="NoPrint">保存</button>
+
+
 </form>
 @endsection
 
@@ -165,6 +170,10 @@
         // PHPの変数（所見の数）をjavascriptで取込む
         var syoken_cnt = <?php echo $syoken_cnt ?>;
 
+
+        var genfield_id = <?php echo $genfield->id ?>;
+        console.log('170: ',genfield_id);
+
         // 不良箇所、所見、処置のリスト取得
         var array_part = [];
         var array_comment = [];
@@ -175,10 +184,14 @@
             array_action.push($('#action'+i).text().trim());
         }
 
+
+        // 保存用jsonデータ作成
         var array = [];
         for(var i=0; i<array_part.length; i++){
-            array.push({"part":array_part[i],"comment":array_comment[i],"action":array_action[i]});
+            // array.push({"part":array_part[i], "comment":array_comment[i], "action":array_action[i], "genfield_id":genfield->id});
+            array.push({"part":array_part[i], "comment":array_comment[i], "action":array_action[i], "genfield_id":genfield_id});
         }
+
 
         var jsonArray=JSON.stringify(array);
         $('#saveData').val(jsonArray);
