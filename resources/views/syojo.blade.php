@@ -10,24 +10,20 @@
 
 @section('content')
 
-<!-- Bootstrap の定形コード… -->
+
+<!-- 症状登録フォーム -->
 <div class="card-body">
-    <div class="card-title"></div>
-
-
-    <!-- 症状登録フォーム -->
-    <form action="{{ route('syojo')}}" method="POST" class="formhorizontal">
+    <form action="{{ route('syojo')}}" method="POST" class="formhorizontal" >
         {{csrf_field()}}
-
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" >
             <input type="text" name="syojo" class="form-control" placeholder="input" aria-describedby="basic-addon">
             <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">登録</button>
+                <button type="submit" class="btn btn-primary">登録</button>
             </div>
         </div>
-
     </form>
 </div>
+
 
 <!-- 既に登録されてる症状のリスト -->
 @if(count($items_syojo) > 0)
@@ -63,7 +59,7 @@
                         <td>
                             <form action="{{ url('syojo_edit/'.$syojo->id)}}" method="POST">
                                 {{csrf_field()}}
-                                <button type="submit" class="btn btn-primary py-0">  変更  </button>
+                                <button type="submit" class="btn btn-secondary py-0">  変更  </button>
                             </form>
                         </td>
 

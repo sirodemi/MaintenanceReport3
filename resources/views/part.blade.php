@@ -10,26 +10,14 @@
 
 @section('content')
 
-<!-- Bootstrap の定形コード… -->
+<!-- 不良箇所登録フォーム -->
 <div class="card-body">
-    <div class="card-title"></div>
-
-
-    <!-- 不良箇所登録フォーム -->
     <form action="{{ route('part')}}" method="POST" class="formhorizontal">
         {{csrf_field()}}
-
-        <!-- 不良箇所 -->
-        <div class="form-group">
-            <div class="col-sm-6">
-                <input type="text" name="part" class="form-control">
-            </div>
-        </div>
-
-        <!-- 登録ボタン -->
-        <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-primary">  登録  </button>
+        <div class="input-group mb-3" >
+            <input type="text" name="part" class="form-control" placeholder="input" aria-describedby="basic-addon">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">登録</button>
             </div>
         </div>
     </form>
@@ -69,7 +57,7 @@
                         <td>
                             <form action="{{ url('part_edit/'.$part->id)}}" method="POST">
                                 {{csrf_field()}}
-                                <button type="submit" class="btn btn-primary py-0">  変更  </button>
+                                <button type="submit" class="btn btn-secondary py-0">  変更  </button>
                             </form>
                         </td>
 
