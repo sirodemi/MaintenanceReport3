@@ -37,12 +37,16 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">所見管理</a>
-                @yield('top')
+                <a class="navbar-brand">@yield('top')</a>
+                {{-- @yield('top') --}}
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/syoken') }}">所見選択画面（リセット）</a>
+                        <a class="nav-link" href="{{ url('/') }}">所見管理トップ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/syoken') }}">　　所見選択画面（リセット）</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="history.back()">　　前に戻る</a>
