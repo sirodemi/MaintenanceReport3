@@ -1,8 +1,9 @@
 @extends('layouts.base')
 @section('title','印刷画面')
 @section('header')
-<style>
+    @parent
 
+<style>
     /* 印刷プレビュー＆印刷用レイアウト */
     @media print,
     screen {
@@ -38,8 +39,8 @@
 </style>
 @endsection
 
-@section('content')
-<body>
+@section('top')
+{{-- <div>印刷</div> --}}
 <!-- 保存ボタン -->
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
@@ -49,10 +50,15 @@
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
     <button type="button" id="save-button" class="NoPrint">保存</button>
 </form>
+@endsection
 
-<br><br>
+
+@section('content')
+<body>
+
+<br>
 <p><h3>点検報告書</h3></p>
-<br><br>
+<br>
 
 
 

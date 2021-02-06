@@ -6,7 +6,9 @@
 @endsection
 
 @section('top')
+<div>所見選択</div>
 @endsection
+
 
 @section('content')
 
