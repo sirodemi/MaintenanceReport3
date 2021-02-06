@@ -1,5 +1,9 @@
 @extends('layouts.base')
 @section('title','処置編集')
+@section('top')
+<div>[処置編集]</div>
+@endsection
+
 @section('content')
 
 <div class="row">
@@ -30,6 +34,7 @@
 
 @endsection
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

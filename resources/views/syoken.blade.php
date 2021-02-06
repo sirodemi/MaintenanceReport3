@@ -4,6 +4,10 @@
 @section('header')
     @parent
 @endsection
+
+@section('top')
+@endsection
+
 @section('content')
 
 <style>
@@ -844,6 +848,7 @@ console.log('563:candy ',candy)
 @endsection
 
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

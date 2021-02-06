@@ -3,11 +3,16 @@
 @section('header')
     @parent
 @endsection
+
+@section('top')
+<div>[処置]　登録・変更・削除</div>
+@endsection
+
 @section('content')
 
 <!-- Bootstrap の定形コード… -->
 <div class="card-body">
-    <div class="card-title">  [処置]　登録・変更・削除 </div>
+    <div class="card-title"></div>
 
 
     <!-- 処置登録フォーム -->
@@ -86,6 +91,7 @@
 
 @endsection
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

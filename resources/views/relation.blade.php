@@ -3,11 +3,17 @@
 @section('header')
     @parent
 @endsection
+
+@section('top')
+<div>[所見関係性]　登録・変更・削除</div>
+@endsection
+
+
 @section('content')
 
 
-<div>  [所見　紐付け]　登録・変更・削除 </div>
-
+{{-- <div>  [所見　紐付け]　登録・変更・削除 </div> --}}
+<br>
 
 <!-- 関係性登録フォーム -->
 <form action="{{ route('relation')}}" method="POST">
@@ -50,7 +56,7 @@
 <!-- 既に登録されてる関係性のリスト -->
 @if(count($items_relation) > 0)
 <div class="card-body">
-    <div class="card-title">  紐付けリスト  </div>
+    <div class="card-title"></div>
     <div class="card-body">
         <table class="table table-striped task-table table-sm">
             <!-- テーブルヘッダ -->
@@ -118,6 +124,7 @@
 
 @endsection
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

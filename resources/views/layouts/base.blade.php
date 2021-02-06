@@ -22,7 +22,7 @@
         }
 
 .finish{
-            border-bottom: solid 1px #ccc;
+            /* border-bottom: solid 1px #ccc; */
 }
     </style>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
@@ -38,7 +38,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">所見管理</a>
-
+                @yield('top')
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -60,7 +60,8 @@
     </div>
     <div class="finish">
         @section('finish')
-        @yield('finish')
+            @yield('finish')
+            <hr width="95%">
         @show
     </div>
     <div class="footer">

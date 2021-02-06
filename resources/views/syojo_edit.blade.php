@@ -1,5 +1,10 @@
 @extends('layouts.base')
 @section('title','症状編集')
+
+@section('top')
+<div>症状編集</div>
+@endsection
+
 @section('content')
 
 <div class="row">
@@ -30,6 +35,7 @@
 
 @endsection
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

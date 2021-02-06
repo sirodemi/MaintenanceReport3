@@ -1,5 +1,10 @@
 @extends('layouts.base')
 @section('title','関係性編集')
+
+@section('top')
+<div>[関係性編集]</div>
+@endsection
+
 @section('content')
 
 
@@ -44,6 +49,7 @@
 
 @endsection
 @section('finish')
+@parent
 @endsection
 
 @section('footer')

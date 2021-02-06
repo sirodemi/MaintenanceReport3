@@ -57,23 +57,24 @@
 
 
 書式1
-<table class="table table-bordered">
+<table class="table table-sm table-bordered">
     <tbody>
         <tr>
-            <th>工事名</th><td colspan="3" id="koujiMei">{{$genfield->field_name}}</td>
+            <th style="width:10%">工事ID</th><td style="width:20%" colspan="2" id="field_id">{{$genfield->id}}</td>
+            <th style="width:10%">工事名</th><td style="width:60%" id="field_name">{{$genfield->field_name}}</td>
         </tr>
         <tr>
-            <th>住所</th><td colspan="3" id="jusyo">{{$genfield->field_address}}</td>
+            <th>住所</th><td colspan="4" id="field_address">{{$genfield->field_address}}</td>
         </tr>
         <tr>
-            <th>型式</th><td id="katasiki">katasiki data</td>
-            <th>製造番号</th><td id="seizoBango">seizobango</td>
+            <th>型式</th><td colspan="2" id="katasiki">katasiki data</td>
+            <th>製造番号</th><td colspan="3" id="seizoBango">seizobango</td>
         </tr>
     </tbody>
 </table>
 
 書式2
-<table class="table table-bordered">
+<table class="table table-sm table-bordered">
     <tbody>
         <tr>
             <th>型式</th><td id="katasiki2">katasiki data</td>
@@ -111,7 +112,7 @@
 <script type="module">
 
     // // データベースからダウンロード
-    // var koujiData = '工事データ';
+    // var kojiData = '工事データ';
     // var jusyoData = '住所データ';
     // var katasikiData ='型式データ';
     // var seizoBangoData = '製造番号データ';
@@ -119,7 +120,7 @@
     // var settiBasyoData = '設置場所データ';
 
     // // 概要へ代入する
-    // $('#koujiMei').html(koujiData);
+    // $('#kojiMei').html(kojiData);
     // $('#jusyo').html(jusyoData);
     // $('#katasiki').html(katasikiData);
     // $('#katasiki2').html(katasikiData);
@@ -185,6 +186,10 @@
 
 </body>
 @endsection
+
+@section('finish')
+@endsection
+
 @section('footer')
 @endsection
 
