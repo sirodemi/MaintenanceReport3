@@ -10,25 +10,39 @@
 
 @section('content')
 
-
+<br>
 <!-- 原因登録フォーム -->
-<div class="card-body">
+<div class="col-md-11 mb-1 ">
     <form action="{{ route('cause')}}" method="POST" class="formhorizontal">
         {{csrf_field()}}
-        <div class="input-group mb-3" >
-            <input type="text" name="cause" class="form-control" placeholder="input" aria-describedby="basic-addon">
+        <label for="action" class="ml-2">原因追加</label>
+        <div class="input-group mb-4 ml-4">
+            <input type="text" name="cause" id="cause" class="form-control" placeholder="原因を追加" >
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">登録</button>
+                <button type="submit" class="btn btn-secondary">登録</button>
             </div>
         </div>
     </form>
 </div>
 
+<!-- 処置登録フォーム -->
+{{-- <div class="col-md-11 mb-1 ">
+    <form action="{{ route('action')}}" method="POST" class="formhorizontal">
+        {{csrf_field()}}
+        <label for="action" class="ml-2">処置追加</label>
+        <div class="input-group mb-4 ml-4">
+            <input type="text" class="form-control" name="action"　id="action" placeholder="処置を追加">
+            <div class="input-group-prepend">
+                <button type="submit" class="btn btn-secondary">登録</button>
+            </div>
+        </div>
+    </form>
+</div> --}}
+
 
 <!-- 既に登録されてる原因のリスト -->
 @if(count($items_cause) > 0)
 <div class="card-body">
-    <div class="card-title">  原因リスト  </div>
     <div class="card-body">
         <table class="table table-striped task-table table-sm">
             <!-- テーブルヘッダ -->

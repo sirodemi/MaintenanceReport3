@@ -10,15 +10,15 @@
 
 @section('content')
 
-
 <!-- 処置登録フォーム -->
-<div class="card-body">
+<div class="col-md-11 mb-1 ">
     <form action="{{ route('action')}}" method="POST" class="formhorizontal">
         {{csrf_field()}}
-        <div class="input-group mb-3" >
-            <input type="text" name="action" class="form-control" placeholder="input" aria-describedby="basic-addon">
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">登録</button>
+        <label for="action" class="ml-2">処置追加</label>
+        <div class="input-group mb-4 ml-4">
+            <input type="text" class="form-control" name="action"　id="action" placeholder="処置を追加">
+            <div class="input-group-prepend">
+                <button type="submit" class="btn btn-secondary">登録</button>
             </div>
         </div>
     </form>
@@ -28,7 +28,7 @@
 <!-- 既に登録されてる処置のリスト -->
 @if(count($items_action) > 0)
 <div class="card-body">
-    <div class="card-title">  処置リスト  </div>
+    {{-- <div class="card-title">処置リスト</div> --}}
     <div class="card-body">
         <table class="table table-striped task-table table-sm">
             <!-- テーブルヘッダ -->

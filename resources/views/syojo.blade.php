@@ -10,15 +10,16 @@
 
 @section('content')
 
-
+<br>
 <!-- 症状登録フォーム -->
-<div class="card-body">
+<div class="col-md-11 mb-1 ">
     <form action="{{ route('syojo')}}" method="POST" class="formhorizontal" >
         {{csrf_field()}}
-        <div class="input-group mb-3" >
-            <input type="text" name="syojo" class="form-control" placeholder="input" aria-describedby="basic-addon">
+        <label for="syojo" class="ml-2">症状追加</label>
+        <div class="input-group mb-4 ml-4">
+            <input type="text" name="syojo" id="syojo" class="form-control" placeholder="症状を追加" >
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">登録</button>
+                <button type="submit" class="btn btn-secondary">登録</button>
             </div>
         </div>
     </form>
@@ -28,7 +29,6 @@
 <!-- 既に登録されてる症状のリスト -->
 @if(count($items_syojo) > 0)
 <div class="card-body">
-    <div class="card-title">  症状リスト  </div>
     <div class="card-body">
         <table class="table table-striped task-table table-sm">
             <!-- テーブルヘッダ -->
