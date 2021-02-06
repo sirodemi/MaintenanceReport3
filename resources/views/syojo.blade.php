@@ -19,19 +19,13 @@
     <form action="{{ route('syojo')}}" method="POST" class="formhorizontal">
         {{csrf_field()}}
 
-        <!-- 症状 -->
-        <div class="form-group">
-            <div class="col-sm-6">
-                <input type="text" name="syojo" class="form-control">
+        <div class="input-group mb-3">
+            <input type="text" name="syojo" class="form-control" placeholder="input" aria-describedby="basic-addon">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">登録</button>
             </div>
         </div>
 
-        <!-- 登録ボタン -->
-        <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-primary">  登録  </button>
-            </div>
-        </div>
     </form>
 </div>
 
