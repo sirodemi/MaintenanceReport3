@@ -170,18 +170,17 @@
         // PHPの変数（所見の数）をjavascriptで取込む
         var syoken_cnt = <?php echo $syoken_cnt ?>;
 
-
+        // 現場情報取得
         var genfield_id = <?php echo $genfield->id ?>;
-        console.log('170: ',genfield_id);
 
         // 不良箇所、所見、処置のリスト取得
         var array_part = [];
         var array_comment = [];
         var array_action = [];
         for(var i=0; i<syoken_cnt; i++){
-            array_part.push($('#part'+i).text().substr( 6 ).trim());
-            array_comment.push($('#comment'+i).text().trim());
-            array_action.push($('#action'+i).text().trim());
+            array_part.push($('#part'+i).text().substr(6).trim());//[不良箇所]　削除
+            array_comment.push($('#comment'+i).text().substr(4).trim());//症状　削除
+            array_action.push($('#action'+i).text().substr(2).trim());//▶︎マーク　削除
         }
 
 
