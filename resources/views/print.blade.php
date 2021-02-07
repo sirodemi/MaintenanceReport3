@@ -53,7 +53,6 @@
     {{-- 保存データ --}}
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
 
-
 </form>
 @endsection
 
@@ -64,8 +63,6 @@
 <br>
 <p><h3>点検報告書</h3></p>
 <br>
-
-
 
 書式1
 <table class="table table-sm table-bordered">
@@ -106,11 +103,11 @@
     $syoken_cnt = count($part);
 @endphp
 @for ($i = 0; $i < $syoken_cnt; $i++)
-@php
-    $partID     = 'part'.$i;
-    $commentID  = 'comment'.$i;
-    $actionID   = 'action'.$i;
-@endphp
+    @php
+        $partID     = 'part'.$i;
+        $commentID  = 'comment'.$i;
+        $actionID   = 'action'.$i;
+    @endphp
     <div class="card mx-auto">
         <div class="card-body">
             <div class="card-header" id="{{$partID}}">[不良箇所]{{$part[$i]}}   </div>

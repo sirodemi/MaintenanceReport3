@@ -66,16 +66,16 @@ class PrintController extends Controller
             $report_id = Report::all()->max('report_id') + 1;
         }
 
-        var_dump($report_id);
-
         for ($i = 0; $i < count($part); $i++) {
             $report = new Report();
             $report->part = $part[$i];
             $report->comment = $comment[$i];
             $report->action = $action[$i];
             $report->genfield_id = $genfield_id[$i];
+            $report->report_id = $report_id;
             $report->save();
         }
+
         return view('print_save');
     }
 
