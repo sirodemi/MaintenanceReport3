@@ -17,7 +17,7 @@
 <table class="table table-sm table-bordered">
     <thead>
         <tr>
-            <th>工事ID</th>
+            {{-- <th>工事ID</th> --}}
             <th>工事名</th>
             <th>型式</th>
             <th>不良箇所</th>
@@ -29,7 +29,7 @@
     <tbody>
     @foreach($syokenItems as $syokenItem)
         <tr>
-            <td id="field_id">{{$syokenItem->genfield_id}}</td>
+            {{-- <td id="field_id">{{$syokenItem->genfield_id}}</td> --}}
             <td id="field_name">{{$syokenItem->genfield->field_name}}</td>
             <td id="katasiki">katasiki data</td>
             <td id="part">{{$syokenItem->part}}</td>
