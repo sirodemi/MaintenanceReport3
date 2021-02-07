@@ -65,11 +65,12 @@ html, body {
 
             <div class="links" >
                 <a href="{{ url('/syoken') }}"      style="font-size: 12pt;">メイン画面</a>
-                <a href="{{ url('/syojo') }}"       style="font-size: 12pt;">症状管理画面</a>
-                <a href="{{ url('/part') }}"        style="font-size: 12pt;">不良箇所管理画面</a>
-                <a href="{{ url('/cause') }}"       style="font-size: 12pt;">原因管理画面</a>
-                <a href="{{ url('/action') }}"      style="font-size: 12pt;">処置管理画面</a>
-                <a href="{{ url('/relation') }}"    style="font-size: 12pt;">関係管理画面</a>
+                <a href="{{ url('/print_load') }}"  style="font-size: 12pt;">保存データ</a>
+                <a href="{{ url('/syojo') }}"       style="font-size: 12pt;">症状管理</a>
+                <a href="{{ url('/part') }}"        style="font-size: 12pt;">不良箇所管理</a>
+                <a href="{{ url('/cause') }}"       style="font-size: 12pt;">原因管理</a>
+                <a href="{{ url('/action') }}"      style="font-size: 12pt;">処置管理</a>
+                <a href="{{ url('/relation') }}"    style="font-size: 12pt;">リレーション</a>
             </div>
         </div>
     </div>

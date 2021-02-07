@@ -54,7 +54,7 @@ Route::post('/action/update', 'ActionController@update'); //更新
 // 現場情報と印刷情報
 Route::post('print', 'PrintController@index')->name('print'); //現場情報と印刷情報を読込む
 Route::post('print_save', 'PrintController@save')->name('print_save'); //印刷情報編集
-
+Route::get('print_load', 'PrintController@load')->name('print_load'); //保存情報取得
 
 
 

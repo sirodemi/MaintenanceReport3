@@ -69,4 +69,28 @@ class PrintController extends Controller
         }
         return view('print_save');
     }
+
+
+    // 保存情報取得
+    public function load(Request $request)
+    {
+
+        // 所見データ取得（更新日の新しい順）
+        $syokenItems = Report::orderBy('created_at', 'desc')->get();
+
+
+        foreach ($syokenItems as $syokenItem) {
+            // var_dump($syokenItem->genfield_id);
+            // var_dump($syokenItem->updated_at->format('Y/m/d H:i:s'));
+        }
+
+
+        return view('print_load', [
+            'syokenItems' => $syokenItems,
+            //     'part' => $part,
+            //     'comment' => $comment,
+            //     'action' => $action,
+            //     'genfield' => $genfield,
+        ]);
+    }
 }

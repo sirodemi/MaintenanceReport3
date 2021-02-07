@@ -5,7 +5,7 @@
 @endsection
 
 @section('top')
-<div>[所見関係性]　登録・変更・削除</div>
+<div>[リレーション]　登録・変更・削除</div>
 @endsection
 
 
