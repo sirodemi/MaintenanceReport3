@@ -170,7 +170,7 @@
         // PHPの変数（所見の数）をjavascriptで取込む
         var syoken_cnt = <?php echo $syoken_cnt ?>;
 
-        // 現場情報取得
+        // 現場id情報取得
         var genfield_id = <?php echo $genfield->id ?>;
 
         // 不良箇所、所見、処置のリスト取得
