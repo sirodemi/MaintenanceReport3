@@ -15,4 +15,14 @@ class Report extends Model
 
     // // created_atを使わない場合はfalseを指定する。
     // public $timestamps = false;
+
+    public function genfield()
+    {
+        return $this->belongsTo('App\GenFieldField');
+    }
+
+    public function getData()
+    {
+        return $this->id;
+    }
 }
