@@ -96,10 +96,15 @@ class PrintController extends Controller
         // var_dump($temp_reportIDs[0]->first()->report_id);
 
         foreach ($temp_reportID_set as $temp_reportID) {
-            var_dump($temp_reportID->report_id);
+            $report_set = Report::where('report_id', 3)->first();
+            var_dump($report_set->part, $report_set->comment, $report_set->action, $report_set->created_at->format('Y/m/d H:i:s'));
         }
 
-        $reportIDs = Report::where('report_id', $temp_reportIDs[0])->first();
+        foreach ($temp_reportID_set as $temp_reportID) {
+            // var_dump($temp_reportID->report_id);
+        }
+
+        $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
 
 
 
