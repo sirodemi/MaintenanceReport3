@@ -59,6 +59,15 @@ class PrintController extends Controller
             array_push($genfield_id, $item["genfield_id"]);
         }
 
+        // [report_id]の現在の最大値から新しい[report_id]を取得
+        $reportID_NotNull = Report::whereNotNull('report_id')->get();
+        $report_id = 1;
+        if (count($reportID_NotNull) != 0) {
+            $report_id = Report::all()->max('report_id') + 1;
+        }
+
+        var_dump($report_id);
+
         for ($i = 0; $i < count($part); $i++) {
             $report = new Report();
             $report->part = $part[$i];
