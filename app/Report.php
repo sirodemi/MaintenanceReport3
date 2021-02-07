@@ -10,7 +10,7 @@ class Report extends Model
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'report_id', 'comment_id'
+        'genfield_id', 'part', 'comment', 'action',
     ];
 
     // // created_atを使わない場合はfalseを指定する。
