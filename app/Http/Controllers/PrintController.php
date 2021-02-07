@@ -88,14 +88,26 @@ class PrintController extends Controller
         $syokenItems = Report::orderBy('created_at', 'desc')->get();
 
 
-        foreach ($syokenItems as $syokenItem) {
-            // var_dump($syokenItem->genfield_id);
-            // var_dump($syokenItem->updated_at->format('Y/m/d H:i:s'));
+        // $reportIDs = 100;
+
+        $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
+
+        // var_dump($temp_reportIDs);
+        // var_dump($temp_reportIDs[0]->first()->report_id);
+
+        foreach ($temp_reportID_set as $temp_reportID) {
+            var_dump($temp_reportID->report_id);
         }
+
+        $reportIDs = Report::where('report_id', $temp_reportIDs[0])->first();
+
+
+
 
 
         return view('print_load', [
             'syokenItems' => $syokenItems,
+            'reportIDs' => $reportIDs,
             //     'part' => $part,
             //     'comment' => $comment,
             //     'action' => $action,

@@ -13,6 +13,10 @@
     {{-- @foreach($syokenItems as $syokenItem)
         {{$syokenItem}};
     @endforeach --}}
+
+{{$reportIDs}}
+
+
 <br>
 <table class="table table-sm table-bordered">
     <thead>
