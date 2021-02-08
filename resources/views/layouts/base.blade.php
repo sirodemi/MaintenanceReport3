@@ -37,14 +37,24 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand">@yield('top')</a>
-                {{-- @yield('top') --}}
+
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav">
+                    {{-- @yield('top') --}}
+                    <li class="nav-item">
+                        <input type="text" name="genfieldID" class="form-control nav-link"  value="" style="width: 100px" placeholder="現場ID">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">現場名</a>
+                    </li>
+                </ul>
+
+
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">所見管理トップ</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/syoken') }}">　　所見選択画面（リセット）</a>
                     </li>

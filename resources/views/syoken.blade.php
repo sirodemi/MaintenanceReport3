@@ -390,7 +390,7 @@ console.log('black click!');
                 }
             }
 
-console.log('465:syoken_print_bag: ',syoken_print_bag);
+// console.log('465:syoken_print_bag: ',syoken_print_bag);
 
             // 処置テーブルに黒の行を表示する
             makeBlack_actionTable();
