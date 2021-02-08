@@ -14,8 +14,8 @@
         {{$syokenItem}};
     @endforeach --}}
 
-{{$reportIDs}}
-
+{{-- {{$reportIDs}} --}}
+{{-- {{$reportItem_set}} --}}
 
 <br>
 <table class="table table-sm table-bordered">
@@ -46,6 +46,37 @@
     @endforeach
     </tbody>
 </table>
+
+
+
+
+
+{{-- <table class="table table-sm table-bordered">
+    <thead>
+        <tr>
+            <th>所見id</th>
+            <th>工事名</th>
+            <th>型式</th>
+            <th>不良箇所</th>
+            <th>所見</th>
+            <th>処置</th>
+            <th>更新日</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($reportItem_set as $syokenItem)
+        <tr>
+            <td id="report_id_2">{{$syokenItem->report_id}}</td>
+            <td id="field_name">{{$syokenItem->genfield->field_name}}</td>
+            <td id="katasiki">katasiki data</td>
+            <td id="part">{{$syokenItem->part}}</td>
+            <td id="comment">{{$syokenItem->comment}}</td>
+            <td id="action">{{$syokenItem->action}}</td>
+            <td id="updated">{{$syokenItem->created_at->format('Y/m/d H:i:s')}}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table> --}}
 
 
 

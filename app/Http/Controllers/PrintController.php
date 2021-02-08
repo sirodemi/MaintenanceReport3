@@ -91,31 +91,35 @@ class PrintController extends Controller
         // $reportIDs = 100;
 
         $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
-        $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
+        // $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
 
 
-        // ここから下は予備コード（データをreport_idでまとめた場合）
+        // ここから下はデータをreport_idでまとめた場合
         // --------------------------------------------------------
-        // $reportItem_set = [];
-        // foreach ($temp_reportID_set as $temp_reportID) {
-        //     // var_dump($temp_reportID->report_id);
-        //     $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
+        $reportItem_set = [];
+        foreach ($temp_reportID_set as $temp_reportID) {
+            // var_dump($temp_reportID->report_id);
+            $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
 
-        //     $reportItem = array(
-        //         'part' => $report_set->part,
-        //         'comment' => $report_set->comment,
-        //         'action' => $report_set->action,
-        //         'created_at' => $report_set->created_at->format('Y/m/d H:i:s'),
-        //     );
-        //     $reportItem_set[] = $reportItem;
-        // }
-        // var_dump($reportItem_set);
+            $reportItem = array(
+                'part' => $report_set->part,
+                'comment' => $report_set->comment,
+                'action' => $report_set->action,
+                'created_at' => $report_set->created_at->format('Y/m/d H:i:s'),
+            );
+            $reportItem_set[] = $reportItem;
+        }
         // ----------------------------------------------------------
+
+        var_dump('syokenItems: ' . $syokenItems . '<br>');
+        // var_dump('reportIDs: ' . $reportIDs . '<br>');
+        var_dump('reportItem_set', $reportItem_set);
 
 
         return view('print_load', [
             'syokenItems' => $syokenItems,
-            'reportIDs' => $reportIDs,
+            // 'reportIDs' => $reportIDs,
+            'reportItem_set' => $reportItem_set,
             //     'part' => $part,
             //     'comment' => $comment,
             //     'action' => $action,
