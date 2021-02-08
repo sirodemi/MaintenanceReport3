@@ -75,8 +75,8 @@
             <th>住所</th><td colspan="4" id="field_address">{{$genfield->field_address}}</td>
         </tr>
         <tr>
-            <th>型式</th><td colspan="2" id="katasiki">katasiki data</td>
-            <th>製造番号</th><td colspan="3" id="seizoBango">seizobango</td>
+            <th>型式</th><td colspan="2" id="katasiki">{{$general_set->set_model}}</td>
+            <th>製造番号</th><td colspan="3" id="seizoBango">{{$general_set->set_serial_number}}</td>
         </tr>
     </tbody>
 </table>
@@ -85,11 +85,11 @@
 <table class="table table-sm table-bordered">
     <tbody>
         <tr>
-            <th>型式</th><td id="katasiki2">katasiki data</td>
-            <th>製造年月</th><td id="seizoNengetu">seizonengetu data</td>
+            <th>型式</th><td id="katasiki2">{{$general_set->set_model}}</td>
+            <th>製造年月</th><td id="seizoNengetu">{{$general_set->set_manufacturing_date}}</td>
         </tr>
         <tr>
-            <th>設置場所</th><td id="settiBasyo">settibasyo data</td>
+            <th>設置場所</th><td id="settiBasyo">{{$genfield->field_address}}</td>
             <th></th><td></td>
         </tr>
     </tbody>

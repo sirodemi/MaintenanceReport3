@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\GenFieldField;
+use App\GenFieldGeneralSet;
 use Illuminate\Http\Request;
 use App\Report;
 
@@ -34,7 +35,7 @@ class PrintController extends Controller
         $genfield = GenFieldField::first();
         // var_dump($genfield['id']);
         // dd($genfield['field_name']);
-
+        $general_set = GenFieldGeneralSet::first();
 
         // ---------------------------------------------------------------
 
@@ -45,6 +46,7 @@ class PrintController extends Controller
             'comment' => $comment,
             'action' => $action,
             'genfield' => $genfield,
+            'general_set' => $general_set,
         ]);
     }
 
