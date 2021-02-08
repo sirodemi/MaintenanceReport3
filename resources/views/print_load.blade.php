@@ -15,7 +15,14 @@
     @endforeach --}}
 
 {{-- {{$reportIDs}} --}}
+{{-- {{$syokenItems}} --}}
 {{-- {{$reportItem_set}} --}}
+@php
+$reportItems = json_decode($reportItem_jsonset);
+@endphp
+
+{{-- {{$reportItems->b}} --}}
+{{$reportItems[0]->part}}
 
 <br>
 <table class="table table-sm table-bordered">
@@ -46,8 +53,6 @@
     @endforeach
     </tbody>
 </table>
-
-
 
 
 

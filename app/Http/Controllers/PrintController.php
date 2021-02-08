@@ -111,19 +111,13 @@ class PrintController extends Controller
         }
         // ----------------------------------------------------------
 
-        var_dump('syokenItems: ' . $syokenItems . '<br>');
-        // var_dump('reportIDs: ' . $reportIDs . '<br>');
-        var_dump('reportItem_set', $reportItem_set);
 
+        $reportItem_jsonset = json_encode($reportItem_set);
+        // $reportItem_jsonset = json_encode(array('a' => 1, 'b' => 2));
 
         return view('print_load', [
             'syokenItems' => $syokenItems,
-            // 'reportIDs' => $reportIDs,
-            'reportItem_set' => $reportItem_set,
-            //     'part' => $part,
-            //     'comment' => $comment,
-            //     'action' => $action,
-            //     'genfield' => $genfield,
+            'reportItem_jsonset' => $reportItem_jsonset,
         ]);
     }
 }
