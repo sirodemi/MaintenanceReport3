@@ -11,11 +11,12 @@
 @section('content')
 
     {{-- @foreach($syokenItems as $syokenItem)
-        {{$syokenItem}};
+        {{$syokenItem}}
+        {{$syokenItem->genfield->field_name}}
     @endforeach --}}
 
 @php
-$reportItems = json_decode($reportItem_jsonset);
+    $reportItems = json_decode($reportItem_jsonset);
 @endphp
 
 {{-- {{$reportItems->b}} --}}
@@ -38,8 +39,7 @@ $reportItems = json_decode($reportItem_jsonset);
     @foreach($syokenItems as $syokenItem)
         <tr>
             <td id="report_id">{{$syokenItem->report_id}}</td>
-            {{-- <td id="field_name">{{$syokenItem->genfield->field_name}}</td>--}}
-            <td id=field_name>{{$syokenItem->genfield_id}}</td>
+            <td id="field_name">{{$syokenItem->genfield->field_name}}</td>
             <td id="katasiki">katasiki data</td>
             <td id="part">{{$syokenItem->part}}</td>
             <td id="comment">{{$syokenItem->comment}}</td>

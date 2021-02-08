@@ -96,12 +96,10 @@ class PrintController extends Controller
         // 所見データ取得（更新日の新しい順）
         $syokenItems = Report::orderBy('created_at', 'desc')->get();
 
-
+        // var_dump($syokenItems[0]->genfield->field_name);
 
         // ここから下はデータをreport_idでまとめた場合
         // --------------------------------------------------------
-        // $reportIDs = 100;
-        // $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
         $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
         $reportItem_set = [];
         foreach ($temp_reportID_set as $temp_reportID) {
@@ -109,6 +107,7 @@ class PrintController extends Controller
 
             $reportItem = array(
                 'report_id' => $temp_reportID->report_id,
+                // 'field_name' => '',
                 'part' => $report_set->part,
                 'comment' => $report_set->comment,
                 'action' => $report_set->action,
