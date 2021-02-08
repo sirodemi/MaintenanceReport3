@@ -91,23 +91,26 @@ class PrintController extends Controller
         // $reportIDs = 100;
 
         $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
-
-        // var_dump($temp_reportIDs);
-        // var_dump($temp_reportIDs[0]->first()->report_id);
-
-        foreach ($temp_reportID_set as $temp_reportID) {
-            $report_set = Report::where('report_id', 3)->first();
-            var_dump($report_set->part, $report_set->comment, $report_set->action, $report_set->created_at->format('Y/m/d H:i:s'));
-        }
-
-        foreach ($temp_reportID_set as $temp_reportID) {
-            // var_dump($temp_reportID->report_id);
-        }
-
         $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
 
 
+        // ここから下は予備コード（データをreport_idでまとめた場合）
+        // --------------------------------------------------------
+        // $reportItem_set = [];
+        // foreach ($temp_reportID_set as $temp_reportID) {
+        //     // var_dump($temp_reportID->report_id);
+        //     $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
 
+        //     $reportItem = array(
+        //         'part' => $report_set->part,
+        //         'comment' => $report_set->comment,
+        //         'action' => $report_set->action,
+        //         'created_at' => $report_set->created_at->format('Y/m/d H:i:s'),
+        //     );
+        //     $reportItem_set[] = $reportItem;
+        // }
+        // var_dump($reportItem_set);
+        // ----------------------------------------------------------
 
 
         return view('print_load', [
