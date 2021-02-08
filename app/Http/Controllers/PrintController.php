@@ -97,17 +97,14 @@ class PrintController extends Controller
         $syokenItems = Report::orderBy('created_at', 'desc')->get();
 
 
-        // $reportIDs = 100;
-
-        $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
-        // $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
-
 
         // ここから下はデータをreport_idでまとめた場合
         // --------------------------------------------------------
+        // $reportIDs = 100;
+        // $reportIDs = Report::where('report_id', $temp_reportID_set[0])->first();
+        $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
         $reportItem_set = [];
         foreach ($temp_reportID_set as $temp_reportID) {
-            // var_dump($temp_reportID->report_id);
             $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
 
             $reportItem = array(

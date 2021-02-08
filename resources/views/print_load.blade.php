@@ -19,13 +19,12 @@ $reportItems = json_decode($reportItem_jsonset);
 @endphp
 
 {{-- {{$reportItems->b}} --}}
-{{$reportItems[0]->report_id}}
+{{-- {{$reportItems[0]->report_id}} --}}
 
 <br>
 <table class="table table-sm table-bordered">
     <thead>
         <tr>
-            {{-- <th>工事ID</th> --}}
             <th>所見id</th>
             <th>工事名</th>
             <th>型式</th>
@@ -38,9 +37,9 @@ $reportItems = json_decode($reportItem_jsonset);
     <tbody>
     @foreach($syokenItems as $syokenItem)
         <tr>
-            {{-- <td id="field_id">{{$syokenItem->genfield_id}}</td> --}}
             <td id="report_id">{{$syokenItem->report_id}}</td>
-            <td id="field_name">{{$syokenItem->genfield->field_name}}</td>
+            {{-- <td id="field_name">{{$syokenItem->genfield->field_name}}</td>--}}
+            <td id=field_name>{{$syokenItem->genfield_id}}</td>
             <td id="katasiki">katasiki data</td>
             <td id="part">{{$syokenItem->part}}</td>
             <td id="comment">{{$syokenItem->comment}}</td>
@@ -65,12 +64,12 @@ $reportItems = json_decode($reportItem_jsonset);
             <th>更新日</th>
         </tr>
     </thead>
+
     <tbody>
     @foreach($reportItems as $syokenItem)
         <tr>
             <td id="report_id_2">{{$syokenItem->report_id}}</td>
-            {{-- <td id="field_name_2">{{$syokenItem->genfield->field_name}}</td> --}}
-            <td></td>
+            <td id="field_name_2"></td>
             <td id="katasiki_2">katasiki data</td>
             <td id="part_2">{{$syokenItem->part}}</td>
             <td id="comment_2">{{$syokenItem->comment}}</td>
