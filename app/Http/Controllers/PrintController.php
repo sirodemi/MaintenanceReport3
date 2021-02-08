@@ -27,10 +27,17 @@ class PrintController extends Controller
         }
 
 
+        // ---------------------  修正　---------------------------------
+
+
         // 現場情報読込
         $genfield = GenFieldField::first();
         // var_dump($genfield['id']);
         // dd($genfield['field_name']);
+
+
+        // ---------------------------------------------------------------
+
 
 
         return view('print', [
@@ -102,6 +109,7 @@ class PrintController extends Controller
             $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
 
             $reportItem = array(
+                'report_id' => $temp_reportID->report_id,
                 'part' => $report_set->part,
                 'comment' => $report_set->comment,
                 'action' => $report_set->action,
