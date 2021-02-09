@@ -37,7 +37,6 @@ class PrintController extends Controller
         // ---------------------------------------------------------------
 
 
-
         return view('print', [
             'part' => $part,
             'comment' => $comment,
@@ -97,30 +96,30 @@ class PrintController extends Controller
 
         // ここから下はデータをreport_idでまとめた場合
         // --------------------------------------------------------
-        // $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
-        // $reportItem_set = [];
-        // foreach ($temp_reportID_set as $temp_reportID) {
-        //     $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
+        $temp_reportID_set = Report::select('report_id')->distinct()->orderBy('report_id', 'desc')->get();
+        $reportItem_set = [];
+        foreach ($temp_reportID_set as $temp_reportID) {
+            $report_set = Report::where('report_id', $temp_reportID->report_id)->first();
 
-        //     $reportItem = array(
-        //         'report_id' => $temp_reportID->report_id,
-        //         // 'field_name' => '',
-        //         'part' => $report_set->part,
-        //         'comment' => $report_set->comment,
-        //         'action' => $report_set->action,
-        //         'created_at' => $report_set->created_at->format('Y/m/d H:i:s'),
-        //     );
-        //     $reportItem_set[] = $reportItem;
-        // }
+            $reportItem = array(
+                'report_id' => $temp_reportID->report_id,
+                'field_name' => '',
+                'part' => $report_set->part,
+                'comment' => $report_set->comment,
+                'action' => $report_set->action,
+                'created_at' => $report_set->created_at->format('Y/m/d H:i:s'),
+            );
+            $reportItem_set[] = $reportItem;
+        }
         // ----------------------------------------------------------
 
 
-        // $reportItem_jsonset = json_encode($reportItem_set);
+        $reportItem_jsonset = json_encode($reportItem_set);
         // $reportItem_jsonset = json_encode(array('a' => 1, 'b' => 2));
 
         return view('print_load', [
             'syokenItems' => $syokenItems,
-            // 'reportItem_jsonset' => $reportItem_jsonset,
+            'reportItem_jsonset' => $reportItem_jsonset,
         ]);
     }
 }

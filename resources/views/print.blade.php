@@ -92,7 +92,7 @@
 </table>
 
 <br>
-<!-- 書式2
+{{-- 書式2
 <table border="1" width="100%" style="font-size: 14pt;table-layout: auto;">
     <tbody>
         <tr>
@@ -105,7 +105,7 @@
         </tr>
     </tbody>
 </table>
-<br> -->
+<br> --}}
 
 
 {{-- PrintControllerからデータを受け取って印刷内容を表示する --}}
