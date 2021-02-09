@@ -39,7 +39,7 @@
                 <ul class="navbar-nav">
                     {{-- @yield('top') --}}
                     <li class="nav-item">
-                        <input type="text" name="genfieldID" class="form-control nav-link"  value="" style="width: 100px" placeholder="現場ID">
+                        <input type="text" id="genfieldID" name="genfieldID" class="form-control nav-link"  style="width: 100px" placeholder="現場ID">
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">現場名</a>

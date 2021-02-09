@@ -10,6 +10,11 @@ use App\Report;
 
 class PrintController extends Controller
 {
+    public function test(Request $request)
+    {
+        var_dump('77' . $request);
+    }
+
     public function index(Request $request)
     {
 
