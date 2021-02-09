@@ -180,6 +180,7 @@
 
         // 現場id情報取得
         var genfield_id = <?php echo $genfield->id ?>;
+genfield_id=1;
 
         // 不良箇所、所見、処置のリスト取得
         var array_part = [];
@@ -187,8 +188,8 @@
         var array_action = [];
         for(var i=0; i<syoken_cnt; i++){
             array_part.push($('#part'+i).text().substr(6).trim());//[不良箇所]　削除
-            array_comment.push($('#comment'+i).text().substr(4).trim());//症状　削除
-            array_action.push($('#action'+i).text().substr(2).trim());//▶︎マーク　削除
+            array_comment.push($('#comment'+i).text().substr(4).trim());//[症状]　削除
+            array_action.push($('#action'+i).text().substr(4).trim());//[処置]　削除
         }
 
 
@@ -203,6 +204,8 @@
         var jsonArray=JSON.stringify(array);
         $('#saveData').val(jsonArray);
 
+
+console.log('208: ',jsonArray);
 
         // 送信ボタンクリック
         $('.saveForm').submit();

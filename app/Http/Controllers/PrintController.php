@@ -29,14 +29,11 @@ class PrintController extends Controller
 
 
         // ---------------------  修正　---------------------------------
-
-
         // 現場情報読込
         $genfield = GenFieldField::first();
         // var_dump($genfield['id']);
         // dd($genfield['field_name']);
         $general_set = GenFieldGeneralSet::first();
-
         // ---------------------------------------------------------------
 
 
