@@ -21,14 +21,11 @@
             .NoPrint{ display: none;}
         }
 
-.finish{
-            /* border-bottom: solid 1px #ccc; */
-}
     </style>
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    <script src="/js/app.js"></script>
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-    <link href="/css/app.css" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="/js/app.js"></script> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="/css/app.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -42,7 +39,7 @@
                 <ul class="navbar-nav">
                     {{-- @yield('top') --}}
                     <li class="nav-item">
-                        <input type="text" name="genfieldID" class="form-control nav-link"  value="" style="width: 100px" placeholder="現場ID">
+                        <input type="text" id="genfieldID" name="genfieldID" class="form-control nav-link"  style="width: 100px" placeholder="現場ID">
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">現場名</a>
@@ -53,10 +50,10 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">所見管理トップ</a>
+                        <a class="nav-link" href="{{ url('/') }}">トップ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/syoken') }}">　　所見選択画面（リセット）</a>
+                        <a class="nav-link" href="{{ url('/syoken') }}">　　選択画面</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="history.back()">　　前に戻る</a>

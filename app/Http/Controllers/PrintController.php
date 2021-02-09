@@ -10,6 +10,11 @@ use App\Report;
 
 class PrintController extends Controller
 {
+    public function test(Request $request)
+    {
+        var_dump('77' . $request);
+    }
+
     public function index(Request $request)
     {
 
@@ -29,16 +34,12 @@ class PrintController extends Controller
 
 
         // ---------------------  修正　---------------------------------
-
-
         // 現場情報読込
         $genfield = GenFieldField::first();
         // var_dump($genfield['id']);
         // dd($genfield['field_name']);
         $general_set = GenFieldGeneralSet::first();
-
         // ---------------------------------------------------------------
-
 
 
         return view('print', [
@@ -107,7 +108,7 @@ class PrintController extends Controller
 
             $reportItem = array(
                 'report_id' => $temp_reportID->report_id,
-                // 'field_name' => '',
+                'field_name' => '',
                 'part' => $report_set->part,
                 'comment' => $report_set->comment,
                 'action' => $report_set->action,

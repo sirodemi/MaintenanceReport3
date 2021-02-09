@@ -16,7 +16,10 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('report_id',255);
-            $table->char('comment_id',255);
+            $table->char('genfield_id',255);
+            $table->char('part',255);
+            $table->char('comment',255);
+            $table->char('action',255);
             $table->timestamps();
         });
     }

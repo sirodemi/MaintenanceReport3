@@ -19,4 +19,10 @@ class Report extends Model
     {
         return $this->belongsTo('App\GenFieldField');
     }
+
+    // 機器情報をリレーションで取得
+    public function generalset()
+    {
+        return $this->belongsTo('App\GenFieldGeneralSet');
+    }
 }

@@ -10,6 +10,9 @@
 
 @section('content')
 
+
+{{-- {{$syokenItems}} --}}
+
     {{-- @foreach($syokenItems as $syokenItem)
         {{$syokenItem}}
         {{$syokenItem->genfield->field_name}}
@@ -66,15 +69,15 @@
     </thead>
 
     <tbody>
-    @foreach($reportItems as $syokenItem)
+    @foreach($reportItems as $reportItem)
         <tr>
-            <td id="report_id_2">{{$syokenItem->report_id}}</td>
-            <td id="field_name_2"></td>
+            <td id="report_id_2">{{$reportItem->report_id}}</td>
+            <td id="field_name_2">{{$syokenItems[0]->genfield->field_name}}</td>
             <td id="katasiki_2">katasiki data</td>
-            <td id="part_2">{{$syokenItem->part}}</td>
-            <td id="comment_2">{{$syokenItem->comment}}</td>
-            <td id="action_2">{{$syokenItem->action}}</td>
-            <td id="updated_2">{{$syokenItem->created_at}}</td>
+            <td id="part_2">{{$reportItem->part}}</td>
+            <td id="comment_2">{{$reportItem->comment}}</td>
+            <td id="action_2">{{$reportItem->action}}</td>
+            <td id="updated_2">{{$reportItem->created_at}}</td>
         </tr>
     @endforeach
     </tbody>
