@@ -36,12 +36,24 @@
         content: "copyright 2021 sunyou.co.jp";
     }
 
+    /* table > tbody > tr > th{
+        border:1px solid black;
+    }
+
+    table > tbody > tr > td{
+        border:1px solid black;
+    } */
+
+
+
 </style>
 @endsection
 
-@section('top')
-{{-- <div>印刷</div> --}}
 
+
+@section('content')
+<body>
+<br>
 <form action="{{ url('print_save')}}" method="POST" class="saveForm">
     @csrf
     {{-- 印刷ボタン --}}
@@ -54,35 +66,34 @@
     <input type="hidden" name="saveData" id="saveData" value="dummy" />
 
 </form>
-@endsection
 
 
-@section('content')
-<body>
 
 <br>
 <p><h3>点検報告書</h3></p>
 <br>
 
-書式1
-<table class="table table-sm table-bordered">
+<!-- 書式1 -->
+<!-- <table class="table table-bordered"> -->
+<table border="1" width="100%" style="font-size: 14pt;table-layout: auto;">
     <tbody>
         <tr>
-            <th style="width:10%">工事ID</th><td style="width:20%" colspan="2" id="field_id">{{$genfield->id}}</td>
-            <th style="width:10%">工事名</th><td style="width:60%" id="field_name">{{$genfield->field_name}}</td>
+            <td width="10%">工事ID</td><td colspan="2" id="field_id" width="20%">{{$genfield->id}}</td>
+            <td width="15%">工事名</td><td id="field_name" width="55%">{{$genfield->field_name}}</td>
         </tr>
         <tr>
-            <th>住所</th><td colspan="4" id="field_address">{{$genfield->field_address}}</td>
+            <td>住所</td><td colspan="4" id="field_address">{{$genfield->field_address}}</td>
         </tr>
         <tr>
-            <th>型式</th><td colspan="2" id="katasiki">{{$general_set->set_model}}</td>
-            <th>製造番号</th><td colspan="3" id="seizoBango">{{$general_set->set_serial_number}}</td>
+            <td>型式</td><td colspan="2" id="katasiki">{{$general_set->set_model}}</td>
+            <td>製造番号</td><td colspan="3" id="seizoBango">{{$general_set->set_serial_number}}</td>
         </tr>
     </tbody>
 </table>
 
-書式2
-<table class="table table-sm table-bordered">
+<br>
+<!-- 書式2
+<table border="1" width="100%" style="font-size: 14pt;table-layout: auto;">
     <tbody>
         <tr>
             <th>型式</th><td id="katasiki2">{{$general_set->set_model}}</td>
@@ -94,7 +105,7 @@
         </tr>
     </tbody>
 </table>
-
+<br> -->
 
 
 {{-- PrintControllerからデータを受け取って印刷内容を表示する --}}
@@ -108,11 +119,11 @@
         $commentID  = 'comment'.$i;
         $actionID   = 'action'.$i;
     @endphp
-    <div class="card mx-auto">
+    <div class="card border-dark mx-auto">
         <div class="card-body">
             <div class="card-header" id="{{$partID}}">[不良箇所]{{$part[$i]}}   </div>
             <p class="card-text" id="{{$commentID}}">症状： {{$comment[$i]}} </p>
-            <p class="card-text" id="{{$actionID}}">▶︎ {{$action[$i]}} </p>
+            <p class="card-text" id="{{$actionID}}">処置： {{$action[$i]}} </p>
         </div>
     </div>
 @endfor
