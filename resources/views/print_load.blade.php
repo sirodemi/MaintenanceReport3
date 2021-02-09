@@ -10,14 +10,17 @@
 
 @section('content')
 
+
+{{-- {{$syokenItems}} --}}
+
     {{-- @foreach($syokenItems as $syokenItem)
         {{$syokenItem}}
         {{$syokenItem->genfield->field_name}}
     @endforeach --}}
 
-@php
+{{-- @php
     $reportItems = json_decode($reportItem_jsonset);
-@endphp
+@endphp --}}
 
 {{-- {{$reportItems->b}} --}}
 {{-- {{$reportItems[0]->report_id}} --}}
@@ -51,7 +54,7 @@
 </table>
 
 
-<br>
+{{-- <br>
 <table class="table table-sm table-bordered">
     <thead>
         <tr>
@@ -78,7 +81,7 @@
         </tr>
     @endforeach
     </tbody>
-</table>
+</table> --}}
 
 
 @endsection
