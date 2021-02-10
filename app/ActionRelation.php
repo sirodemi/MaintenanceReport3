@@ -13,5 +13,5 @@ class ActionRelation extends Model
     protected $fillable = ['comment_id', 'action_id'];
 
     // // created_atを使わない場合はfalseを指定する。
-    public $timestamps = false;
+    // public $timestamps = false;
 }
