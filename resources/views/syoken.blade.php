@@ -36,18 +36,7 @@
             var inputValue = $(this).val();
             console.log('35: ',inputValue);
 
-            $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-            });
-
-            $.post({
-                url:"{{ url('test')}}" ,
-                data:{
-                    'mes':inputValue,
-                }
-            });
+            var xhr=new XMLHttpRequest();
         });
     </script>
 
